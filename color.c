@@ -87,10 +87,14 @@ int		ft_color1(t_env *fdf, t_bresen *breezy, float distance)
 	return (0x006600FF);
 }
 
+
+/* I find the distance between point1 and point 2, divide that distance into 10 pieces, when
+it goes past each 10% it switches color */
 int		ft_color(t_env *fdf, t_bresen *breezy, float distance)
 {
 	if ((fdf->next_z || fdf->curr_z) > fdf->hmin)
 	{
+		/*color changes depending on low z value to high z, high to low, 0 to 0, or high to high8*/
 		if (fdf->curr_z == fdf->next_z)
 			return (ft_color3(fdf, breezy, distance));
 		if (fdf->curr_z < fdf->next_z)

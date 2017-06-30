@@ -12,6 +12,7 @@
 
 #include "fdf.h"
 
+/* m > 1 or m < -1 */
 void			ft_slopesharp(t_env *fdf, t_bresen *breezy)
 {
 	float		x;
@@ -41,6 +42,7 @@ void			ft_slopesharp(t_env *fdf, t_bresen *breezy)
 	}
 }
 
+/* m is in decimals */
 void			ft_slopegradual(t_env *fdf, t_bresen *breezy)
 {
 	float		y;
@@ -70,6 +72,7 @@ void			ft_slopegradual(t_env *fdf, t_bresen *breezy)
 	}
 }
 
+/* this thing does that one thing to that one thing to that one point to another point */
 void			ft_slopestraight(t_env *fdf)
 {
 	float		tmp;

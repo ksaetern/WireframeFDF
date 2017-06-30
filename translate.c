@@ -12,6 +12,8 @@
 
 #include "fdf.h"
 
+/*moves the middle of your grid thats at the 0,0 pixel to the middle of your window */
+/*now your shits always centered */
 void	ft_translate(t_env **f, t_hooks *hooks)
 {
 	float	x;
@@ -31,5 +33,5 @@ void	ft_translate(t_env **f, t_hooks *hooks)
 		}
 		(*f)->i++;
 	}
-	printf("translation = [x = %f] [y = %f]\n", ((*f)->max / 2), ((*f)->max / 4));
+	printf("translation = [x = %f] [y = %f]\n", ((*f)->max / 2), ((*f)->maxside / 2));
 }

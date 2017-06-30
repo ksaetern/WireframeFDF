@@ -11,10 +11,14 @@ Big project: break it down step by step.
 	parse the info to see if you have a correct map. ft_parse -> parse.c
 
 ~step 2: int array. ft_store -> store.c
-	main. I want to take in the argument. pull the data. how? I run get next line once. y++ and use the line to find the length of my width/x. then run get next line until the end to find total height or my y value. note:( I can possibly store my cartesian points and my z value at the same time). i close my fd and run it again now looking for my z value, strsplit my line and atoi and store it into an int array that is **height(y) by  *width(x). values should be saved into t_map struct
+	main. I want to take in the argument. pull the data. how? I run get next line once. y++ and use the line to find the
+	length of my width/x. then run get next line until the end to find total height or my y value. note:( I can possibly store my 
+	cartesian points and my z value at the same time). i close my fd and run it again now looking for my z value, strsplit my line and atoi and 
+	store it into an int array that is **height(y) by  *width(x). values should be saved into t_map struct
 
 ~step 3: ft_enviroment -> enviroment.c
-	set up your t_env enviroment struct. this big ass struct will help you carry around useful variables to use and info you might need for calculations.
+	set up your t_env enviroment struct. this big ass struct will help you carry around 
+	useful variables to use and info you might need for calculations.
 	x1,y1,x2,y2 values are used to plot your lines. point1 to point 2.
 	hmax and hmin are used for color ranges. to show change in height from min height to max height of your z values.
 	w, h, and big. width, height, and big = which ever of the two is bigger.
@@ -22,14 +26,17 @@ Big project: break it down step by step.
 
 	gap:
 	first you need to figure out how big of a square or gap between points in your map is.
-	so take a number like 600,700,800 and divide by your big value. if my map is a 15w by 10h map, i would take 700/15. in a map of 600 pixels across, each point1 to point 2 would be 46 pixels wide and 46 pixels high. a 46 pixel by 46 pixel square.
+	so take a number like 600,700,800 and divide by your big value. if my map is a 15w by 10h map, i would take 700/15.
+	 in a map of 600 pixels across, each point1 to point 2 would be 46 pixels wide and 46 pixels high. a 46 pixel by 46 pixel square.
 
 	m, rise, run: theese are used for your m = rise/run. m = slope basically.
 
 	max and maxside: max: as a bonus i use my tile to figure out the size of my map needed to make a proper window to fill everything. play around with the numbers.
 	i wanted a rectangular window so i just take my max and -300 from it.
 
-	cart: ft_makecartesian will take in your t_map to use thoose numbers to set up your cartesian coordinate points array, a 2-d array of t_points. what we want to be storing are pixel coordinates of x and y. the raw z value and then we [scale] the z value/z value multiplied by some number like 5 or 20 because the normal z value is too low to show a good perspective usually.
+	cart: ft_makecartesian will take in your t_map to use thoose numbers to set up your cartesian coordinate points array, a 2-d array of t_points.
+	what we want to be storing are pixel coordinates of x and y. the raw z value and then we [scale] the z value/z value multiplied by some number
+	like 5 or 20 because the normal z value is too low to show a good perspective usually.
 	find the midx = your maps width/2. midy = maps height/2.
 	w = 15, h = 10
 
@@ -38,7 +45,8 @@ Big project: break it down step by step.
 	((fdf->j - m->midx) * fdf->gap);
 	((fdf->i - m->midy) * fdf->gap);
 	use this formula to get pixel coordinates where the midpoint is (0,0). your x=0,y=0 will start in negative pixels.
-	now if your able to record the midpoint of your grid at 0,0 if you move/add [translation] equal to the middle of ur map, you are moving that 0,0 to the middle of the map. now you are centered everytime. tadah! motha fucka.
+	now if your able to record the midpoint of your grid at 0,0 if you move/add [translation] equal to the middle of ur map,
+	 you are moving that 0,0 to the middle of the map. now you are centered everytime. tadah! motha fucka.
 	middle of ur map = half your total mapwidth x half your total mapheight.
 
 
@@ -72,7 +80,8 @@ ok back to main.
 	º = degree angle in radians.
 	5 sec matrix math rule tutorial: variable on sides = top variables mulitiplied down then added together.
 
-	keep your thumb the same position pointing towards yourself and bend your wrist down to your right. index points from sky to the right and middle finger goes from right to down. this is rotating around the z axis. z doesnt change.
+	keep your thumb the same position pointing towards yourself and bend your wrist down to your right. index points from sky to the right 
+	and middle finger goes from right to down. this is rotating around the z axis. z doesnt change.
 		x 		y 	  z
 	x[cosº + -sinº  + 0]
 	y[sinº +  cosº  + 0]

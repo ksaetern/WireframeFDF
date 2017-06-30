@@ -78,6 +78,8 @@ void	ft_xrotate(t_env **f)
 	}
 }
 
+/* try viewing one rotation at a time to see how each rotation affects the grid */
+/* my y rotation doesnt do shit, its there to look pretty */
 void	ft_rotate(t_env *f, t_hooks *hooks)
 {	
 	ft_zrotate(&f);

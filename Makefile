@@ -47,16 +47,32 @@ OBJ		=	${SRCS:.c=.o}
 
 all: $(NAME)
 
-$(MAKE):
-		gcc -Wall -Wextra -Werror -c main.c store.c
-
+#recompiling the libraries is turned off now for speed
 $(NAME): $(OBJ)
 		#@make -C libft
 		@echo "\033[32mCompiled libft\033[0m"
 		#@make -C $(MLX_CAP)
 		@echo "\033[32mCompiled mlx_macros\033[0m"
 		@$(CC) $(CCFLAGS) $(INCLUDE) $(OBJ) -o $(NAME)
-		@echo "FDF created\n"
+
+		@echo "\033[36;1m                           \033[0m";
+		@echo "\033[36;1m        ,--,               \033[0m";
+		@echo "\033[36;1m      ,--.'|      ,----,   \033[0m";
+		@echo "\033[36;1m   ,--,  | :    .'   .' \  \033[0m";
+		@echo "\033[36;1m,---.'|  : '  ,----,'    | \033[0m";
+		@echo "\033[36;1m;   : |  | ;  |    :  .  ; \033[0m";
+		@echo "\033[36;1m|   | :  : |  ;    |.'  /  \033[0m";
+		@echo "\033[36;1m:   : |.'  |  \`----'/  ;   \033[0m";
+		@echo "\033[36;1m|   ' '  ; :    /  ;  /    \033[0m";
+		@echo "\033[36;1m\   \  .'. |   ;  /  /-,   \033[0m";
+		@echo "\033[36;1m \`---\`:  : |  .  /  /  ;   \033[0m";
+		@echo "\033[36;1m      '  ; | /__;  '   :   \033[0m";
+		@echo "\033[36;1m      |  : ;|   :    .'    \033[0m";
+		@echo "\033[36;1m      '  ,/ ;   | .'       \033[0m";
+		@echo "\033[36;1m      '--'  \`---'         \033[0m";
+		@echo "\033[36;1m                           \033[0m";
+
+		@echo "\033[34;1mFDF created\n\033[0m"
 
 clean:
 	@/bin/rm -f $(OBJ)

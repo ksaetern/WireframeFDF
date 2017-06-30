@@ -12,6 +12,8 @@
 
 #include "fdf.h"
 
+/*storing pixel coordinates with the mid point of your grid at the (0,0) mark of your window */
+/*comment out rotation and translation to see this */
 t_points		**ft_makecartesian(t_env *fdf, t_map *m)
 {
 	t_points	**c;
@@ -47,6 +49,7 @@ t_points		**ft_makecartesian(t_env *fdf, t_map *m)
 
 void			ft_hooked(t_hooks **hooks)
 {
+	/* Hooks dont do anything but its there to give you an idea of where to use it and how for bonus */
 	(*hooks)->zr = 1;
 	(*hooks)->yr = 1;
 	(*hooks)->xr = 1;
@@ -75,7 +78,7 @@ void			ft_populate(t_env **fdf, t_map *m)
 	(*fdf)->run = 0;
 	(*fdf)->max = 800 + (*fdf)->gap * ((*fdf)->big);
 	(*fdf)->maxside = (*fdf)->max - 300;
-	printf("Dimension = %f x %f\n pixel gap = %d\n", (*fdf)->max, (*fdf)->maxside, (*fdf)->gap);
+	printf("Dimension = %f x %f\nPixel gap = %d\n", (*fdf)->max, (*fdf)->maxside, (*fdf)->gap);
 	(*fdf)->i = 0;
 	(*fdf)->j = 0;
 	(*fdf)->cart = ft_makecartesian(*fdf, m);

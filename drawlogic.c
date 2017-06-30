@@ -97,7 +97,9 @@ void			ft_drawright(t_env *fdf, t_bresen **b, t_hooks *hooks)
 		fdf->i++;
 	}
 }
-
+/* rotation(x,y,or z), translation, drawright, drawdown*/
+/* you can turn off each ft by commenting it out to see what each one does */
+/* rotation first then translate, try doing it the other way around to see your shit f**kd :) */
 void			ft_draw(t_env *fdf, t_hooks *hooks)
 {
 	int			x;
