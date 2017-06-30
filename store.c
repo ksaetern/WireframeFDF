@@ -66,6 +66,7 @@ int		ft_findw(char **coord)
 	return (x);
 }
 
+/* open my fd once to get my dimenions for my int array malloc and.... to get dimenions */
 void	ft_findwh(int fd, t_map *list)
 {
 	char	*line;
