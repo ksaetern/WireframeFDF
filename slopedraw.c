@@ -13,6 +13,7 @@
 #include "fdf.h"
 
 /* m > 1 or m < -1 */
+/* we flip to run over rise */
 void			ft_slopesharp(t_env *fdf, t_bresen *breezy)
 {
 	float		x;
@@ -43,6 +44,7 @@ void			ft_slopesharp(t_env *fdf, t_bresen *breezy)
 }
 
 /* m is in decimals */
+/* m stays the same, rise over run */
 void			ft_slopegradual(t_env *fdf, t_bresen *breezy)
 {
 	float		y;
